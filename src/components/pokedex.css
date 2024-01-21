@@ -1,0 +1,75 @@
+:root {
+  --base-red: #e85656;
+  --dark-red: #750808;
+  --darker-red: #530606;
+  --grey: #8f8f8f;
+  --dark-grey: #6d6d6d;
+}
+
+.pokedex {
+  width: 700px;
+  height: 360px;
+  background-color: var(--base-red);
+  border-radius: 30px 8px 8px 30px;
+  border: 6px solid var(--darker-red);
+
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.first-column {
+  width: 60%;
+  height: 100%;
+  border-right: 6px solid var(--dark-grey);
+}
+
+.screen {
+  background-color: #fff;
+  border-radius: 8%;
+  border: 4px solid var(--dark-red);
+}
+
+.second-column {
+  position: relative;
+
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-screen {
+  width: 260px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-column .controls {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.second-screen {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 8%;
+  border: 4px solid var(--dark-red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

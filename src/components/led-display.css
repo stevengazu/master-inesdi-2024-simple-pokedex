@@ -1,0 +1,14 @@
+.led-display {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff0000; /* Default color, adjust as needed */
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+/* Add styles for different LED states if needed */
+.led-display.active {
+  border: 2px solid #fff; /* Example: Border for active state */
+}

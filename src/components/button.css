@@ -1,0 +1,37 @@
+.button {
+  width: 60px;
+  height: 40px;
+  background-color: var(--grey);
+  border: 3px solid var(--darker-red);
+  border-radius: 10%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--dark-grey);
+}
+
+.button.prev::before,
+.button.next::before {
+  content: "";
+  position: absolute;
+}
+
+/* Prev button arrow pointing left */
+.button.prev::before {
+  border-style: solid;
+  border-width: 10px 20px 10px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+/* Next button arrow pointing right */
+.button.next::before {
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #fff;
+}
