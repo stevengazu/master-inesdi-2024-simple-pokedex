@@ -1,14 +1,41 @@
-.led-display {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #ff0000; /* Default color, adjust as needed */
-  display: inline-block;
-  cursor: pointer;
-  margin: 0 10px; /* Adjust margin as needed */
+@keyframes glow {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
 }
 
-/* Add styles for different LED states if needed */
-.led-display.active {
-  border: 2px solid #fff; /* Example: Border for active state */
+.led-display {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  animation: none;
+}
+
+.led-red {
+  background-color: var(--dark-red);
+  border: 2px solid var(--darker-red);
+}
+
+.led-yellow {
+  background-color: var(--dark-yellow);
+  border: 2px solid var(--darker-yellow);
+}
+
+.led-blue {
+  background-color: var(--dark-blue);
+  border: 2px solid var(--darker-blue);
+}
+
+.led-display--active {
+  animation: glow 4s infinite ease-in-out;
+  box-shadow: 0 0 12px #bdbdbdcc; /* subtle glow effect */
 }

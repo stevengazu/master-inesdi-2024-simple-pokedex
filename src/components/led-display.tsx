@@ -1,16 +1,24 @@
 import c from "classnames";
+import { useTheme } from "../contexts/theme-context";
 
 import "./led-display.css";
 
 type Props = {
   color: "blue" | "red" | "yellow";
-  isActive?: boolean;
 };
 
-export function LedDisplay({ color, isActive }: Props) {
+export function LedDisplay({ color }: Props) {
+  const { theme, setTheme } = useTheme();
+  const isActive = theme === color;
+
   return (
     <div
-      className={c("led-display", color, isActive && "led-display--active")}
+      className={c(
+        "led-display",
+        `led-${color}`,
+        isActive && "led-display--active"
+      )}
+      onClick={() => setTheme(color)}
     ></div>
   );
 }

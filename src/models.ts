@@ -1,3 +1,4 @@
+export type PokedexTheme = "blue" | "red" | "yellow" | "green";
 export type PokemonUri = {
   name: string;
   url: string;

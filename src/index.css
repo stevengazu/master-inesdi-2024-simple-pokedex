@@ -14,5 +14,19 @@ body {
   height: 100vh;
 }
 
-main {
+:root {
+  --base-red: #e85656;
+  --dark-red: #750808;
+  --darker-red: #6b1414;
+
+  --base-yellow: #f0f0a1;
+  --dark-yellow: #a1a16d;
+  --darker-yellow: #6d6d3f;
+
+  --base-blue: #7a7ad4;
+  --dark-blue: #4a4a8f;
+  --darker-blue: #2b2b6c;
+
+  --grey: #8f8f8f;
+  --dark-grey: #6d6d6d;
 }

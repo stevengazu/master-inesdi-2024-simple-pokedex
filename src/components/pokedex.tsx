@@ -1,23 +1,26 @@
+import c from "classnames";
 import { useState } from "react";
+import { useTheme } from "../contexts/theme-context";
 import { usePokemonList } from "../hooks/use-pokemon";
 import { Button } from "./button";
+import { LedDisplay } from "./led-display";
 
 import type { Pokemon } from "models";
 
 import "./pokedex.css";
-import { LedDisplay } from "./led-display";
 
 export function Pokedex() {
+  const { theme } = useTheme();
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon>();
   const { isLoading, pokemonList } = usePokemonList();
 
   return (
-    <div className="pokedex">
-      <div className="column first-column">
+    <div className={c("pokedex", `pokedex-${theme}`)}>
+      <div className="panel left-panel">
         <div className="screen main-screen"></div>
       </div>
-      <div className="column second-column">
-        <div className="controls lights">
+      <div className="panel right-panel">
+        <div className="controls leds">
           <LedDisplay color="blue" />
           <LedDisplay color="red" />
           <LedDisplay color="yellow" />
