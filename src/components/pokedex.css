@@ -41,7 +41,21 @@
 .screen {
   background-color: #fff;
   border-radius: 8%;
+}
+
+.pokedex-red .screen,
+.pokedex-red .button {
   border: 4px solid var(--dark-red);
+}
+
+.pokedex-yellow .screen,
+.pokedex-yellow .button {
+  border: 4px solid var(--dark-yellow);
+}
+
+.pokedex-blue .screen,
+.pokedex-blue .button {
+  border: 4px solid var(--dark-blue);
 }
 
 .left-panel .name-display {
@@ -96,7 +110,6 @@
   display: flex;
 
   justify-content: space-around;
-  /* border: 1px solid var(--dark-grey); */
 }
 
 .right-panel .leds {

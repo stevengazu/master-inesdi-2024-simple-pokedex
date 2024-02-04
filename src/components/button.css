@@ -2,7 +2,6 @@
   width: 60px;
   height: 40px;
   background-color: var(--grey);
-  border: 3px solid var(--darker-red);
   border-radius: 10%;
   position: relative;
   display: flex;

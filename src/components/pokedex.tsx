@@ -1,38 +1,52 @@
 import c from "classnames";
 import { useState } from "react";
 import { useTheme } from "../contexts/theme-context";
-import { usePokemonList } from "../hooks/use-pokemon";
+import { usePokemon, usePokemonList } from "../hooks/use-pokemon";
+import { useTextTransition } from "../hooks/use-text-transition";
 import { Button } from "./button";
 import { LedDisplay } from "./led-display";
-import { default as pokemonMock } from "../hooks/mocks/pokemon.json";
-import { useTextTransition } from "../hooks/use-text-transition";
 
 import "./pokedex.css";
-import type { Pokemon } from "models";
 
 export function Pokedex() {
   const { theme } = useTheme();
-  const [transition] = useTextTransition();
+  const { transition, resetTransition } = useTextTransition();
+  const { pokemonList } = usePokemonList();
+  const [i, setI] = useState(0);
+  const { pokemon: selectedPokemon } = usePokemon(pokemonList[i]);
+  const { pokemon: nextPokemon } = usePokemon(pokemonList[i + 1]);
 
-  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon>(pokemonMock);
-  const [nextPokemon, setNextPokemon] = useState<Pokemon>(pokemonMock);
+  const prev = () => {
+    resetTransition();
+    if (i === 0) {
+      setI(pokemonList.length - 1);
+    }
+    setI((i) => i - 1);
+  };
 
-  const { isLoading, pokemonList } = usePokemonList();
+  const next = () => {
+    resetTransition();
+    if (i === pokemonList.length - 1) {
+      setI(0);
+    }
+    setI((i) => i + 1);
+  };
 
   return (
     <div className={c("pokedex", `pokedex-${theme}`)}>
       <div className="panel left-panel">
-        <div className="a">a</div>
         <div className="screen main-screen">
-          <img
-            className={c("sprite", transition && "obfuscated")}
-            src={selectedPokemon.sprites.front_default}
-            alt={selectedPokemon.name}
-          />
+          {selectedPokemon && (
+            <img
+              className={c("sprite", transition && "obfuscated")}
+              src={selectedPokemon.sprites.front_default}
+              alt={selectedPokemon.name}
+            />
+          )}
         </div>
         <div className="screen name-display">
           <div className={c("name", transition && "obfuscated")}>
-            {selectedPokemon.name}
+            {selectedPokemon?.name}
           </div>
         </div>
       </div>
@@ -43,15 +57,17 @@ export function Pokedex() {
           <LedDisplay color="yellow" />
         </div>
         <div className="screen second-screen">
-          <img
-            className={c("sprite", transition && "obfuscated")}
-            src={nextPokemon.sprites.front_default}
-            alt={nextPokemon.name}
-          />
+          {nextPokemon && (
+            <img
+              className={c("sprite", transition && "obfuscated")}
+              src={nextPokemon.sprites.front_default}
+              alt={nextPokemon.name}
+            />
+          )}
         </div>
         <div className="controls">
-          <Button label="prev" onClick={() => {}} />
-          <Button label="next" onClick={() => {}} />
+          <Button label="prev" onClick={prev} />
+          <Button label="next" onClick={next} />
         </div>
       </div>
     </div>
