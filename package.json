@@ -3,6 +3,7 @@
   "private": false,
   "version": "0.1.0",
   "type": "module",
+  "main": "src/index.tsx",
   "description": "Example for INESDI 2024 - Week 4",
   "keywords": [
     "react",
@@ -12,6 +13,9 @@
   ],
   "author": "manutero.developer@gmail.com",
   "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "dev": "vite",
     "test": "jest",
@@ -42,6 +46,6 @@
     "jest-environment-jsdom": "29.7.0",
     "ts-jest": "29.1.1",
     "typescript": "5.2.2",
-    "vite": "5.0.8"
+    "vite": "^5.1.1"
   }
 }
