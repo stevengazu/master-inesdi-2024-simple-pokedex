@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 
-export function useTextTransition(initialState = true, duration = 1000) {
-  const [obfuscate, setObfuscate] = useState(initialState);
+export function useTextTransition(initialState = false, duration = 1000) {
+  const [ready, setReady] = useState(initialState);
 
-  const resetTransition = () => setObfuscate(true);
+  const resetTransition = () => setReady(initialState);
 
   useEffect(() => {
-    if (obfuscate) {
+    if (!ready) {
       const timeout = setTimeout(() => {
-        setObfuscate(false);
+        setReady(true);
       }, duration);
 
       return () => clearTimeout(timeout);
     }
-  }, [obfuscate, duration]);
+  }, [duration, ready]);
 
-  return { transition: obfuscate, resetTransition };
+  return { ready, resetTransition };
 }

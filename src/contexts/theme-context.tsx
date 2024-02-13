@@ -1,11 +1,11 @@
 import { PokedexTheme } from "models";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const ThemeContext = createContext<{
+export const ThemeContext = createContext<{
   theme: PokedexTheme;
   setTheme: React.Dispatch<React.SetStateAction<PokedexTheme>>;
 }>({
@@ -21,8 +21,4 @@ export function ThemeProvider({ children }: Props) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useTheme() {
-  return useContext(ThemeContext);
 }

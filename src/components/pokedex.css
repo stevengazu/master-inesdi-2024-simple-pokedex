@@ -130,3 +130,7 @@
 .obfuscated {
   filter: blur(5px);
 }
+
+.ready {
+  filter: blur(0);
+}

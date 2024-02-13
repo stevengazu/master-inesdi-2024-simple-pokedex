@@ -1,5 +1,5 @@
 import c from "classnames";
-import { useTheme } from "../contexts/theme-context";
+import { useTheme } from "../contexts/use-theme";
 
 import "./led-display.css";
 
