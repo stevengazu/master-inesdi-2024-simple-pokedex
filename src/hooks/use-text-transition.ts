@@ -1,18 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-export function useTextTransition(initialState = false, duration = 1000) {
-  const [ready, setReady] = useState(initialState);
+let timeout: number = 0;
 
-  const resetTransition = () => setReady(initialState);
+export function useTextTransition(duration = 1000) {
+  const [ready, setReady] = useState(false);
+
+  const resetTransition = useCallback(() => {
+    timeout && window.clearTimeout(timeout);
+    setReady(false);
+  }, []);
 
   useEffect(() => {
-    if (!ready) {
-      const timeout = setTimeout(() => {
-        setReady(true);
-      }, duration);
-
-      return () => clearTimeout(timeout);
+    if (ready) {
+      return;
     }
+
+    timeout = window.setTimeout(() => {
+      setReady(true);
+    }, duration);
+
+    return () => window.clearTimeout(timeout);
   }, [duration, ready]);
 
   return { ready, resetTransition };

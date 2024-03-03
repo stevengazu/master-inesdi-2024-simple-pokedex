@@ -70,10 +70,6 @@
   font-weight: 800;
 }
 
-.name-display .name {
-  transition: filter 400ms linear 400ms;
-}
-
 .right-panel {
   position: relative;
   width: 40%;
@@ -102,7 +98,6 @@
 .sprite {
   object-fit: cover;
   image-rendering: pixelated;
-  transition: filter 100ms ease-in 100ms;
 }
 
 .right-panel .controls {
@@ -133,4 +128,16 @@
 
 .ready {
   filter: blur(0);
+}
+
+.ready--quick {
+  transition: filter 200ms linear 200ms;
+}
+
+.ready--regular {
+  transition: filter 300ms linear 400ms;
+}
+
+.ready--slow {
+  transition: filter 500ms linear 800ms;
 }

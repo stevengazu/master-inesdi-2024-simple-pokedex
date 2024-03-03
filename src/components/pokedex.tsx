@@ -1,10 +1,11 @@
 import c from "classnames";
-import { useTextTransition } from "../hooks/use-text-transition";
 import { useState } from "react";
 import { useTheme } from "../contexts/use-theme";
-import { usePokemon, usePokemonList } from "../hooks/use-pokemon";
+import { usePokemon, usePokemonList } from "../hooks";
+import { useTextTransition } from "../hooks/use-text-transition";
 import { Button } from "./button";
 import { LedDisplay } from "./led-display";
+import { randomMode } from "../utils/random";
 
 import "./pokedex.css";
 
@@ -38,14 +39,26 @@ export function Pokedex() {
         <div className="screen main-screen">
           {selectedPokemon && (
             <img
-              className={c("sprite", "obfuscated", ready && "ready")}
+              className={c(
+                "sprite",
+                "obfuscated",
+                ready && "ready",
+                ready && `ready--${randomMode()}`
+              )}
               src={selectedPokemon.sprites.front_default}
               alt={selectedPokemon.name}
             />
           )}
         </div>
         <div className="screen name-display">
-          <div className={c("name", "obfuscated", ready && "ready")}>
+          <div
+            className={c(
+              "name",
+              "obfuscated",
+              ready && "ready",
+              ready && `ready--${randomMode()}`
+            )}
+          >
             {selectedPokemon?.name}
           </div>
         </div>
@@ -59,7 +72,12 @@ export function Pokedex() {
         <div className="screen second-screen">
           {nextPokemon && (
             <img
-              className={c("sprite", "obfuscated", ready && "ready")}
+              className={c(
+                "sprite",
+                "obfuscated",
+                ready && "ready",
+                ready && `ready--${randomMode()}`
+              )}
               src={nextPokemon.sprites.front_default}
               alt={nextPokemon.name}
             />

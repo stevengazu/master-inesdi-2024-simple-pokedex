@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import { usePokemonList } from "./use-pokemon";
 import { default as apiResponse } from "./mocks/pokemon-list.json";
+import { usePokemonList } from "./use-pokemon-list";
 
 describe("usePokemonList()", () => {
   beforeAll(() => {
