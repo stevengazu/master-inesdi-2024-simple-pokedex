@@ -1,11 +1,10 @@
 import c from "classnames";
+import { useTheme } from "contexts/use-theme";
+import { usePokemon, usePokemonList, useTextTransition } from "hooks";
 import { useState } from "react";
-import { useTheme } from "../contexts/use-theme";
-import { usePokemon, usePokemonList } from "../hooks";
-import { useTextTransition } from "../hooks/use-text-transition";
+import { randomMode } from "utils/random";
 import { Button } from "./button";
 import { LedDisplay } from "./led-display";
-import { randomMode } from "../utils/random";
 
 import "./pokedex.css";
 

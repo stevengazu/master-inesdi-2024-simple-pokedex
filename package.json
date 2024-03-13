@@ -1,7 +1,7 @@
 {
   "name": "master-inesdi-2024-simple-pokedex",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "src/index.tsx",
   "description": "Example for INESDI 2024 - Week 4",
@@ -14,7 +14,7 @@
   "author": "manutero.developer@gmail.com",
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
     "dev": "vite",

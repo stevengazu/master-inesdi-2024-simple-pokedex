@@ -1,5 +1,5 @@
-import { ThemeProvider } from "./contexts/theme-context.tsx";
-import { Pokedex } from "./components/pokedex.tsx";
+import { ThemeProvider } from "contexts/theme-context";
+import { Pokedex } from "components/pokedex";
 
 export function App() {
   return (
