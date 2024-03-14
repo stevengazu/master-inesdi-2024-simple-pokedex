@@ -4,14 +4,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react({
-      // Only .tsx files
-      include: "**/*.tsx",
-    }),
-    tsconfigPaths(),
-  ],
+  base: "./",
+  plugins: [react(), tsconfigPaths()],
   build: {
     outDir: "dist",
+  },
+  server: {
+    host: "127.0.0.1",
   },
 });
