@@ -26,6 +26,10 @@ export type PokemonType = {
     url: string;
   };
 };
+export type PokemonDamageFrom = {
+    name: string;
+    url: string;
+};
 
 export type Pokemon = {
   id: number;

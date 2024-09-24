@@ -1,5 +1,5 @@
 .pokedex {
-  width: 700px;
+  width: 900px;
   height: 360px;
 
   border-radius: 30px 8px 8px 30px;
@@ -34,6 +34,7 @@
   width: 60%;
   height: 100%;
   border-right: 6px solid var(--dark-grey);
+  border-left: 6px solid var(--dark-grey);
   padding: 10px 20px;
   justify-content: space-evenly;
 }
@@ -140,4 +141,178 @@
 
 .ready--slow {
   transition: filter 500ms linear 800ms;
+}
+
+
+.right-panel {
+  position: relative;
+  width: 40%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Types-Container {
+  width: 200px; /* Ancho fijo */
+  border: 2px solid var(--darker-red); /* Borde de la caja */
+  padding: 10px; /* Espacio interno */
+  margin: 10px 0; /* Espacio externo */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #fff;
+  border-radius: 8%;
+  overflow: auto; /* Añadir barra de desplazamiento si el contenido es mayor */
+}
+
+.Types-Container h4 {
+  display: inline-block; /* Mostrar en línea */
+  border-bottom: 2px solid #000; /* Borde inferior */
+  color: #000;
+  margin: 0 0 10px 0; /* Margen inferior */
+  padding-bottom: 5px; /* Espacio interno inferior */
+}
+
+.Pokemontypes-container {
+  display: flex; /* Mostrar elementos en línea */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+  gap: 10px; /* Espacio entre elementos */
+  text-transform: uppercase; /* Convertir todo el texto a mayúsculas */
+}
+
+.Pokemontypes {
+  background-color: darkmagenta; /* Color de fondo */
+  padding: 5px 10px; /* Espacio interno */
+  border-radius: 3px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde */
+}
+.Pokemontypes.normal {
+  background-color: #A8A77A; /* Normal */
+  color: white;
+}
+
+.Pokemontypes.fire {
+  background-color: #EE8130; /* Fire */
+  color: white;
+}
+
+.Pokemontypes.water {
+  background-color: #6390F0; /* Water */
+  color: white;
+}
+
+.Pokemontypes.electric {
+  background-color: #F7D02C; /* Electric */
+  color: white;
+}
+
+.Pokemontypes.grass {
+  background-color: #7AC74C; /* Grass */
+  color: white;
+}
+
+.Pokemontypes.ice {
+  background-color: #96D9D6; /* Ice */
+  color: white;
+}
+
+.Pokemontypes.fighting {
+  background-color: #C22E28; /* Fighting */
+  color: white;
+}
+
+.Pokemontypes.poison {
+  background-color: #A33EA1; /* Poison */
+  color: white;
+}
+
+.Pokemontypes.ground {
+  background-color: #E2BF65; /* Ground */
+  color: white;
+}
+
+.Pokemontypes.flying {
+  background-color: #A98FF3; /* Flying */
+  color: white;
+}
+
+.Pokemontypes.psychic {
+  background-color: #F95587; /* Psychic */
+  color: white;
+}
+
+.Pokemontypes.bug {
+  background-color: #A6B91A; /* Bug */
+  color: white;
+}
+
+.Pokemontypes.rock {
+  background-color: #B6A136; /* Rock */
+  color: white;
+}
+
+.Pokemontypes.ghost {
+  background-color: #735797; /* Ghost */
+  color: white;
+}
+
+.Pokemontypes.dragon {
+  background-color: #6F35FC; /* Dragon */
+  color: white;
+}
+
+.Pokemontypes.dark {
+  background-color: #705746; /* Dark */
+  color: white;
+}
+
+.Pokemontypes.steel {
+  background-color: #B7B7CE; /* Steel */
+  color: white;
+}
+
+.Pokemontypes.fairy {
+  background-color: #D685AD; /* Fairy */
+  color: white;
+}
+.dropdownShow {
+  display: block;
+}
+.containerSelected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+ 
+}
+.added{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: #7AC74C;
+  border-color: #7AC74C;
+}
+.not-added{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+.dropdownShow {
+  display: block;
+  margin-left: 2%;
+} 
+.total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  
+  width: 100%;
+  background-color: #7AC74C;
+  color: white;
 }
